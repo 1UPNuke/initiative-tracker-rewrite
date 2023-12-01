@@ -1,0 +1,26 @@
+{
+  "name": "initiative-tracker-rewrite",
+  "version": "1.0.0",
+  "description": "Initiative tracker for DnD 5e",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "rm -r ./dist; npx webpack",
+    "dev": "rm -r ./dist; npx webpack --watch"
+  },
+  "author": "Vanapiton",
+  "license": "MIT",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@3d-dice/dice-box-threejs": "^0.0.12",
+    "express": "^4.18.2",
+    "mathjs": "^12.1.0",
+    "ts-loader": "^9.5.1"
+  }
+}

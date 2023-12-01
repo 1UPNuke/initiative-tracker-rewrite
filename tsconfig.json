@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "es2017",
+        "module": "es2022",
+        "moduleResolution": "bundler",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "rootDir": "src/",
+        "outDir": "dist/"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.spec.ts"]
+}
