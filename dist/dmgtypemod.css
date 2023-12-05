@@ -1,0 +1,84 @@
+.dmgtypemod {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    box-sizing: border-box;
+    padding: 0.4em;
+    content: url("img/resistances/other.png");
+}
+
+.other {
+    background-image: none !important;
+}
+
+.resistance.nonmagical{
+    background-image: url("img/resistances/nonmagical.png");
+}
+.resistance.magical{
+    background-image: url("img/resistances/magical.png");
+}
+.resistance.both-magical{
+    background-image: url("img/resistances/both.png");
+}
+.vulnerability{
+    background-image: url("img/resistances/vulnerability.png");
+}
+.immunity.both-magical{
+    background-image: url("img/resistances/immunity.png");
+}
+.immunity.nonmagical{
+    background-image: url("img/resistances/nm-immunity.png");
+}
+
+
+
+.acid {
+    content: url("img/dmgtypes/acid.png");
+}
+.bludgeoning {
+    content: url("img/dmgtypes/bludgeoning.png");
+}
+.cold {
+    content: url("img/dmgtypes/cold.png");
+}
+.fire {
+    content: url("img/dmgtypes/fire.png");
+}
+.force {
+    content: url("img/dmgtypes/force.png");
+}
+.lightning {
+    content: url("img/dmgtypes/lightning.png");
+}
+.necrotic {
+    content: url("img/dmgtypes/necrotic.png");
+}
+.piercing {
+    content: url("img/dmgtypes/piercing.png");
+}
+.poison {
+    content: url("img/dmgtypes/poison.png");
+}
+.psychic {
+    content: url("img/dmgtypes/psychic.png");
+}
+.radiant {
+    content: url("img/dmgtypes/radiant.png");
+}
+.slashing {
+    content: url("img/dmgtypes/slashing.png");
+}
+.thunder {
+    content: url("img/dmgtypes/thunder.png");
+}
+
+.nonsilvered, .silvered {
+    filter: grayscale(100%);
+}
+
+.nonadamantine, .adamantine {
+    filter: hue-rotate(180deg);
+}

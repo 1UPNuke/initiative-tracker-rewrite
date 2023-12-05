@@ -1,0 +1,150 @@
+
+.btn {
+    text-align: center;
+    font-size: 200%;
+    border-radius: 0.1em;
+    border:0.2em outset #321;
+    color: #A98;
+    background-color: #210;
+    font-weight: bold;
+    filter: drop-shadow(#000 0.2em 0.2em 0.3em);
+    position: relative;
+    margin: 0.5em;
+    font-family: serif;
+    transition: all 0.1s;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #100800;
+}
+
+.btn:active {
+    border:0.2em outset #321;
+    color: #876;
+    filter: drop-shadow(#000 0 0 0);
+    background-color: #100800;
+    transform: scale(0.9);
+}
+
+.plus-btn {
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    padding: 0;
+    color: #AAA;
+}
+
+.plus-btn.friendly {
+    background-color: #069;
+    border-color: #07A;
+    z-index: 3;
+}
+.plus-btn.friendly:hover {
+    background-color: #047;
+}
+.plus-btn.friendly:active {
+    background-color: #036;
+}
+
+.plus-btn.neutral {
+    background-color: #666;
+    border-color: #777;
+    z-index: 2;
+}
+.plus-btn.neutral:hover {
+    background-color: #444;
+    z-index: 2;
+}
+.plus-btn.neutral:active {
+    background-color: #333;
+    z-index: 2;
+}
+
+.plus-btn.hostile {
+    background-color: #822;
+    border-color: #933;
+    z-index: 1;
+}
+.plus-btn.hostile:hover {
+    background-color: #600;
+}
+.plus-btn.hostile:active {
+    background-color: #400;
+}
+
+
+.cell-btn {
+    background-color: #555;
+    position: relative;
+    border: 0.5em outset #666 !important;
+    border-radius: 100%;
+    width: 4em;
+    height: 4em;
+    padding: 0;
+    box-shadow: none !important;
+    cursor: pointer;
+    margin: 1em;
+    padding: 0;
+}
+.cell-btn:hover {
+    background-color: #444;
+}
+.cell-btn:active {
+    border: 0.5em inset #444 !important;
+    background-color: #222;
+}
+
+.cell-btn>img {
+    width: 50%;
+    height: 50%;
+}
+
+.creature-delete-btn {
+    background-color: #822;
+    border: 0.5em outset #A22 !important;
+}
+.creature-delete-btn:hover {
+    background-color: #711;
+}
+.creature-delete-btn:active {
+    background-color: #600;
+    border: 0.5em inset #A22 !important;
+}
+
+.creature-clone-btn {
+    background-color: #358;
+    border: 0.5em outset #46A !important;
+}
+.creature-clone-btn:hover {
+    background-color: #247;
+}
+.creature-clone-btn:active {
+    background-color: #135;
+    border: 0.5em inset #46A !important;
+}
+
+.reset-rounds-btn {
+    outline: none;
+    text-align: center;
+    font-size: 200%;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    margin: 0.5em;
+    cursor: pointer;
+    background-image: url("img/arrow-rotate-left.svg");
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.reset-rounds-btn:active {
+    transform: rotate(-360deg);
+}

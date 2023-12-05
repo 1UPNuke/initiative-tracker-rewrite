@@ -1,0 +1,41 @@
+#monster-dropdown {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #210;
+    transform: translateY(100%);
+    overflow: hidden;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 50vh;
+    user-select: none;
+    cursor: pointer;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    z-index: 999;
+    scrollbar-width: 1rem;
+    scrollbar-color: #654 #210;
+}
+
+#monster-dropdown>li {
+    width: 100%;
+    color: #A98;
+    margin-bottom: 0.5em;
+    border-bottom: 2px dotted #876;
+}
+
+#monster-dropdown>li:hover {
+    background-color: #fff2;
+}
+
+#monster-dropdown::-webkit-scrollbar {
+    width: 1rem;
+    background: #000;
+}
+
+#monster-dropdown::-webkit-scrollbar-thumb {
+    background: #777;
+}
