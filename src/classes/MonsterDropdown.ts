@@ -97,7 +97,8 @@ export default class MonsterDropdown{
         creature.armor_class = monster.armor_class[0].value;
         creature.initBonus = Math.floor((monster.dexterity - 10) / 2);
         creature.hit_points = monster.hit_points;
-        creature.hit_points_roll = monster.hit_points_roll;
+        creature.hit_dice = monster.hit_dice;
+        creature.hit_point_bonus = +monster.hit_points_roll.replace(monster.hit_dice, "");
         creature.name = monster.name;
         creature.dmgTypeMod = [];
         creature.notes = monster.size + " " + monster.type + ", " + monster.alignment;

@@ -1,4 +1,4 @@
-import { rollDice } from "../dicebox";
+import DiceRoller from "./DiceRoller";
 import { DamageTypeModifier } from "../types/DamageTypeModifier";
 
 export enum Attitude {
@@ -14,7 +14,8 @@ export default class InitiativeCreature {
     public initBonus : number = 0;
     public name : string = "";
     public hit_points : number = NaN;
-    public hit_points_roll : string = "";
+    public hit_dice : string = "";
+    public hit_point_bonus : number = 0;
     public armor_class : number = NaN;
     public dmgTypeMod : DamageTypeModifier[] = [];
     public rowElem : HTMLTableRowElement | null = null;
@@ -26,14 +27,15 @@ export default class InitiativeCreature {
         // We use deterministic dice rolling to guarantee a result even if interrupted
         let result = Math.floor(Math.random() * 20)+1;
         const roll = "1d20@"+result;
-        if(physical) await rollDice(roll);
+        if(physical) await DiceRoller.roll(roll);
         this.initiative = result;
         return roll;
     }
 
     public async rollHP(physical : boolean = true) : Promise<string> {
-        if(!this.hit_points_roll) return "";
-        let [count, dice, bonus] = this.hit_points_roll.split("d").join("+").split("+").map(x=>+x);
+        if(!this.hit_dice) return "";
+        let [count, dice] = this.hit_dice.split("d").map(x=>+x);
+        let bonus = this.hit_point_bonus;
         let total = bonus || 0;
         let results = [];
         for(let i = 0; i < count; i++) {
@@ -42,7 +44,8 @@ export default class InitiativeCreature {
             results.push(result);
         }
         const roll = `${count}d${dice}@${results.join()}+${bonus || 0}`;
-        if(physical) await rollDice(roll);
+        if(physical) await DiceRoller.roll(roll);
+        if(total <= 0) total = 1;
         this.hit_points = total;
         return roll;
     }

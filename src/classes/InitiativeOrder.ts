@@ -1,4 +1,4 @@
-import { rollDice } from "../dicebox";
+import DiceRoller from "./DiceRoller";
 import InitiativeCreature, { Attitude } from "./InitiativeCreature";
 import InitiativeTableHandler from "./InitiativeTableHandler";
 
@@ -80,7 +80,7 @@ export default abstract class InitiativeOrder {
             rolls.push(Math.floor(Math.random()*20)+1);
             creature.initiative = rolls[rolls.length-1];
         }
-        await rollDice(rolls.length+"d20@"+rolls.join());
+        await DiceRoller.roll(rolls.length+"d20@"+rolls.join());
 
         InitiativeTableHandler.updateTable();
     }
@@ -94,7 +94,7 @@ export default abstract class InitiativeOrder {
                 creature.initiative = rolls[rolls.length-1];
             }
         }
-        await rollDice(rolls.length+"d20@"+rolls.join());
+        await DiceRoller.roll(rolls.length+"d20@"+rolls.join());
 
         InitiativeTableHandler.updateTable();
     }
@@ -109,10 +109,10 @@ export default abstract class InitiativeOrder {
     }
 
     public static async rollHPForAll() {
-        await rollDice("3d4+3d6+3d8+3d10+3d12+3d20");
+        await DiceRoller.roll("3d4+3d6+3d8+3d10+3d12+3d20");
 
         for(let creature of InitiativeOrder.initiativeCreatures) {
-            if(creature.hit_points_roll) {
+            if(creature.hit_dice) {
                 creature.rollHP(false);
             }
         }

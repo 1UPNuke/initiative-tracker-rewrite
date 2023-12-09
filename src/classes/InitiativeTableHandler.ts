@@ -206,7 +206,7 @@ export default abstract class InitiativeTableHandler{
         let cell = document.createElement("td");
 
         // Create a button for rolling HP and append it to the cell
-        if(creature.hit_points_roll) {
+        if(creature.hit_dice) {
             let btn = document.createElement("button");
             btn.classList.add("cell-btn");
             btn.classList.add("creature-hp-btn");
