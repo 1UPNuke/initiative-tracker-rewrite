@@ -50,7 +50,12 @@ export default class InitiativeCreature {
         return roll;
     }
 
-    constructor(attitude = Attitude.Neutral) {
-        this.attitude = attitude;
+    public clone() : InitiativeCreature {
+        let creature = new InitiativeCreature();
+        for(let [key, value] of Object.entries(this)) {
+            if(typeof value === "function") continue;
+            (creature as {[key: string]: any})[key] = structuredClone(value);
+        }
+        return creature;
     }
 }

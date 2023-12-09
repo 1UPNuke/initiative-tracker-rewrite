@@ -156,10 +156,8 @@ export default abstract class InitiativeOrder {
     }
 
     public static cloneCreature(id : number) : number | undefined {
-        let creature = structuredClone(InitiativeOrder.getCreature(id));
+        let creature = InitiativeOrder.getCreature(id)?.clone();
         if(!creature) return undefined;
-        creature.rollHP = (new InitiativeCreature()).rollHP;
-        creature.rollInitiative = (new InitiativeCreature()).rollInitiative;
         return InitiativeOrder.addCreature(creature);
     }
 }

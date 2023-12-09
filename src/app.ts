@@ -27,7 +27,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if(counter) counter.textContent = "Round: "+InitiativeOrder.round;
     });
 
-    document.querySelector(".plus-btn.friendly")?.addEventListener("click", ()=>InitiativeOrder.addCreature(new InitiativeCreature(Attitude.Friendly)));
-    document.querySelector(".plus-btn.neutral")?.addEventListener("click", ()=>InitiativeOrder.addCreature(new InitiativeCreature(Attitude.Neutral)));
-    document.querySelector(".plus-btn.hostile")?.addEventListener("click", ()=>InitiativeOrder.addCreature(new InitiativeCreature(Attitude.Hostile)));
+    const addCreatureWithAttitude = (attitude : Attitude)=>{
+        let creature = new InitiativeCreature();
+        creature.attitude = attitude;
+        InitiativeOrder.addCreature(creature)
+    }
+    document.querySelector(".plus-btn.friendly")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Friendly));
+    document.querySelector(".plus-btn.neutral")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Neutral));
+    document.querySelector(".plus-btn.hostile")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Hostile));
 });
