@@ -1,2 +1,2 @@
 # initiative-tracker-rewrite
-An initiative tracker for DnD 5e
+An unofficial open-source initiative tracker for D&D 5th edition. A complete rewrite of the previous version.
