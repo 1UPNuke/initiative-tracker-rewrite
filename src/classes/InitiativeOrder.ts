@@ -6,7 +6,6 @@ export default abstract class InitiativeOrder {
     private static initiativeCreatures : InitiativeCreature[] = [];
     private static runningId = 0;
     private static storageVersion = 0;
-    private static loaded = false;
     public static round = 0;
 
     public static addCreature(creature : InitiativeCreature) : number {
@@ -183,10 +182,6 @@ export default abstract class InitiativeOrder {
 
     public static saveToLocalStorage() {
         console.log("Saving...");
-        if(!this.loaded) {
-            this.loadFromLocalStorage();
-            return;
-        }
         let replacer = (key : string, value : any) => {
             if(typeof value == "number") {
                 return Number.isNaN(value) ? "NaN" : value;
@@ -206,7 +201,7 @@ export default abstract class InitiativeOrder {
 
         let parser = (key : string, val : any) => val === "NaN" ? NaN : val;
 
-        let oldStorageVersion = JSON.parse(localStorage.getItem("storageVersion",) ?? "", parser);
+        let oldStorageVersion = JSON.parse(localStorage.getItem("storageVersion",) ?? "null", parser);
         console.log(`Stored version: '${oldStorageVersion}', Current version: '${this.storageVersion}'`);
         if (oldStorageVersion == null) return;
         if (oldStorageVersion !== this.storageVersion) return;
@@ -218,7 +213,6 @@ export default abstract class InitiativeOrder {
             console.log(creature.name);
         }
         this.round = JSON.parse(localStorage.getItem("round") ?? "0", parser);
-        this.loaded = true;
         console.log("Loaded!");
     }
 }
