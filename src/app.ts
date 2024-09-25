@@ -17,10 +17,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
     document.querySelector(".sort-btn")?.addEventListener("click", ()=>InitiativeOrder.sortCreatures());
 
     document.querySelector(".next-btn")?.addEventListener("click", ()=>{
-        InitiativeOrder.updateCurrentTurn();
+        InitiativeOrder.updateCurrentTurn(+1);
         let counter = document.querySelector(".initiative-round-counter");
         if(counter) counter.textContent = "Round: "+InitiativeOrder.round;
     });
+
+    document.querySelector(".prev-btn")?.addEventListener("click", ()=>{
+        InitiativeOrder.updateCurrentTurn(-1);
+        let counter = document.querySelector(".initiative-round-counter");
+        if(counter) counter.textContent = "Round: "+InitiativeOrder.round;
+    });
+
     document.querySelector(".reset-rounds-btn")?.addEventListener("click", ()=>{
         InitiativeOrder.round = 0;
         let counter = document.querySelector(".initiative-round-counter");

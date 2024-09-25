@@ -127,33 +127,49 @@ export default abstract class InitiativeOrder {
         InitiativeTableHandler.updateTable();
     }
 
-    public static updateCurrentTurn() {
+    public static updateCurrentTurn(amount : -1 | 1 = 1) {
         if (InitiativeOrder.initiativeCreatures.length == 0) {
-            InitiativeOrder.round++;
+            InitiativeOrder.round += amount;
             return;
         }
-        let giveTurn = false;
-        for (let creature of InitiativeOrder.initiativeCreatures) {
-            if (giveTurn) {
-                creature.rowElem?.classList.add("current-turn");
-                creature.isTurn = true;
-                break;
-            }
-            else if (creature.isTurn) {
-                giveTurn = true;
-                creature.rowElem?.classList.remove("current-turn");
-                creature.isTurn = false;
-            }
-            else {
-                creature.rowElem?.classList.remove("current-turn");
-                creature.isTurn = false;
-            }
+
+        // Find the index of the current turn holder
+        let currentTurnIndex = InitiativeOrder.initiativeCreatures.findIndex(creature => creature.isTurn);
+
+        let len = InitiativeOrder.initiativeCreatures.length;
+
+        // If nobody is having a turn, select either the first or last creature, depending on the direction
+        if(currentTurnIndex == -1) {
+            let i = amount < 0 ? len - 1 : 0;
+            InitiativeOrder.initiativeCreatures[i].rowElem?.classList.add("current-turn");
+            InitiativeOrder.initiativeCreatures[i].isTurn = true;
+            InitiativeOrder.round += amount;
+            InitiativeTableHandler.updateTable();
+            return;
         }
-        if (!giveTurn) {
-            InitiativeOrder.initiativeCreatures[0].rowElem?.classList.add("current-turn");
-            InitiativeOrder.initiativeCreatures[0].isTurn = true;
-            InitiativeOrder.round++;
+
+        // Remove the turn from the current holder
+        InitiativeOrder.initiativeCreatures[currentTurnIndex].rowElem?.classList.remove("current-turn");
+        InitiativeOrder.initiativeCreatures[currentTurnIndex].isTurn = false;
+
+        // Blank turns for clean table view and for counting rounds
+        if(currentTurnIndex == len - 1 && amount > 0) {
+            InitiativeTableHandler.updateTable();
+            return;
         }
+        if(currentTurnIndex == 0 && amount < 0) {
+            InitiativeTableHandler.updateTable();
+            return;
+        }
+
+        // Add the amount to the current turn index and bring it back in bounds
+        currentTurnIndex += amount;
+        currentTurnIndex %= len;
+
+        // Give the turn to the new holder
+        InitiativeOrder.initiativeCreatures[currentTurnIndex].rowElem?.classList.add("current-turn");
+        InitiativeOrder.initiativeCreatures[currentTurnIndex].isTurn = true;
+
         InitiativeTableHandler.updateTable();
     }
 
