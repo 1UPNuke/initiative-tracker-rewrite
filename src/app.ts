@@ -4,6 +4,7 @@ import MonsterDropdown from "./classes/MonsterDropdown";
 import InitiativeCreature, { Attitude } from "./classes/InitiativeCreature";
 import DiceRoller from "./classes/DiceRoller";
 
+InitiativeOrder.loadFromLocalStorage();
 
 document.addEventListener("DOMContentLoaded", ()=>{
     DiceRoller.init();
@@ -52,4 +53,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     document.querySelector(".plus-btn.friendly")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Friendly));
     document.querySelector(".plus-btn.neutral")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Neutral));
     document.querySelector(".plus-btn.hostile")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Hostile));
+
+    InitiativeTableHandler.updateTable();
 });

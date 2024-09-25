@@ -5,6 +5,8 @@ import InitiativeTableHandler from "./InitiativeTableHandler";
 export default abstract class InitiativeOrder {
     private static initiativeCreatures : InitiativeCreature[] = [];
     private static runningId = 0;
+    private static storageVersion = 0;
+    private static loaded = false;
     public static round = 0;
 
     public static addCreature(creature : InitiativeCreature) : number {
@@ -177,5 +179,52 @@ export default abstract class InitiativeOrder {
         let creature = InitiativeOrder.getCreature(id)?.clone();
         if(!creature) return undefined;
         return InitiativeOrder.addCreature(creature);
+    }
+
+    public static saveToLocalStorage() {
+        console.log("Saving...");
+        if(!this.loaded) {
+            this.loadFromLocalStorage();
+            return;
+        }
+        let replacer = (key : string, value : any) => {
+            if(typeof value == "number") {
+                return Number.isNaN(value) ? "NaN" : value;
+            }
+            return value;
+        }
+
+        localStorage.setItem("storageVersion", JSON.stringify(this.storageVersion, replacer));
+        localStorage.setItem("initiativeCreatures", JSON.stringify(this.initiativeCreatures, replacer));
+        localStorage.setItem("round", JSON.stringify(this.round, replacer));
+
+        console.log("Saved!");
+    }
+
+    public static loadFromLocalStorage() {
+        console.log("Loading...");
+
+        let parser = (key : string, val : any) => val === "NaN" ? NaN : val;
+
+        let oldStorageVersion = JSON.parse(localStorage.getItem("storageVersion",) ?? "", parser);
+        console.log(`Stored version: '${oldStorageVersion}', Current version: '${this.storageVersion}'`);
+        if (oldStorageVersion == null) return;
+        if (oldStorageVersion !== this.storageVersion) return;
+        let creatures : InitiativeCreature[] = JSON.parse(localStorage.getItem("initiativeCreatures") ?? "[]", parser);
+        console.log(creatures);
+        for (let c of creatures) {
+            let creature : InitiativeCreature = new InitiativeCreature();
+
+            for(let key of Object.keys(c)) {
+                // @ts-ignore
+                creature[key] = c[key];
+            }
+
+            this.addCreature(creature);
+            console.log(creature.name);
+        }
+        this.round = JSON.parse(localStorage.getItem("round") ?? "0", parser);
+        this.loaded = true;
+        console.log("Loaded!");
     }
 }

@@ -71,8 +71,6 @@ export default abstract class InitiativeTableHandler{
         // Append the caption, head, and body to the table
         InitiativeTableHandler.table.append(InitiativeTableHandler.caption, InitiativeTableHandler.thead, InitiativeTableHandler.tbody);
 
-        InitiativeOrder.addCreature(new InitiativeCreature());
-
         InitiativeTableHandler.updateTable();
     }
 
@@ -101,6 +99,7 @@ export default abstract class InitiativeTableHandler{
                 row.appendChild(cell);
             }
         }
+        InitiativeOrder.saveToLocalStorage();
     }
 
     private static createAndAppendInput(cell : HTMLTableCellElement) : HTMLDivElement {
