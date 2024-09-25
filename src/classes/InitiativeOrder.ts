@@ -55,7 +55,7 @@ export default abstract class InitiativeOrder {
             let sort = (b.initiative + b.initBonus) - (a.initiative + a.initBonus);
             // Secondary preference for friendly creatures
             if (sort == 0) {
-                sort == b.attitude - a.attitude;
+                sort = b.attitude - a.attitude;
             }
 
             return sort;
