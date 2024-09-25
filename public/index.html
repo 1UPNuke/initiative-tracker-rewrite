@@ -22,22 +22,29 @@
         <h1>Initiative Tracker</h1>
     </header>
     <main>
+        <div class="btns-space-between">
+            <button class="btn sort-btn" title="Sort the list by descending initiative.">Sort</button>
+            <div>
+                <button class="btn roll-all-btn" title="Roll initiative for all creatures.">Roll All</button>
+                <button class="btn roll-nonfriendly-btn" title="Roll initiative for all non-friendly creatures.">Roll Non-friendly</button>
+                <button class="btn roll-all-hp-btn" title="Roll HP for all creatures possible.">Roll All HP</button>
+            </div>
+            <button class="btn clear-btn" title="Clear the table of all creatures.">CLEAR</button>
+        </div>
         <table id="initiative-table" cellspacing="0" cellpadding="0"></table>
         <div id="input-container">
-            <button class="btn prev-btn" title="Move on to the previous turn in initiative.">Prev</button>
-            <button class="btn roll-all-btn" title="Roll initiative for all creatures.">Roll All</button>
-            <button class="btn roll-nonfriendly-btn" title="Roll initiative for all non-friendly creatures.">Roll Non-friendly</button>
-            <button class="btn roll-all-hp-btn" title="Roll HP for all creatures possible.">Roll All HP</button>
-            <button class="btn sort-btn" title="Sort the list by descending initiative.">Sort</button>
-            <button class="btn clear-btn" title="Clear the table of all creatures.">Clear</button>
-            <button class="btn next-btn" title="Move on to the next turn in initiative.">Next</button>
-            <br>
-            <button class="btn plus-btn friendly" title="Add a friendly creature.">+</button>
-            <button class="btn plus-btn neutral" title="Add a neutral creature.">+</button>
-            <button class="btn plus-btn hostile" title="Add a hostile creature.">+</button>
-            <br>
-            <p class="initiative-round-counter">Round: 0</p>
-            <button class="reset-rounds-btn" title="Reset the round counter."></button>
+            <div class="btns-space-between">
+                <button class="btn prev-btn" title="Move on to the previous turn in initiative.">Prev</button>
+                <div>
+                    <button class="btn plus-btn friendly" title="Add a friendly creature.">+</button>
+                    <button class="btn plus-btn neutral" title="Add a neutral creature.">+</button>
+                    <button class="btn plus-btn hostile" title="Add a hostile creature.">+</button>
+                    <br>
+                    <p class="initiative-round-counter">Round: 0</p>
+                    <button class="reset-rounds-btn" title="Reset the round counter."></button>
+                </div>
+                <button class="btn next-btn" title="Move on to the next turn in initiative.">Next</button>
+            </div>
         </div>
     </main>
     <div id="dicebox" style="opacity:0"></div>

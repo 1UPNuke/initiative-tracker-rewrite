@@ -130,6 +130,18 @@ tr.attitude-hostile > td {
     margin-top: 3em;
 }
 
+.btns-space-between {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.btns-center {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
 .current-turn {
     transform: scaleX(1.03) scaleY(1.1);
     box-shadow: #000 1em 1em 1em;

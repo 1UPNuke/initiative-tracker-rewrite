@@ -17,6 +17,7 @@
     padding-left: 0.5em;
     padding-right: 0.5em;
     outline: none;
+    height: 2em;
 }
 
 .btn:hover {
@@ -147,4 +148,17 @@
 
 .reset-rounds-btn:active {
     transform: rotate(-360deg);
+}
+
+.clear-btn {
+    background-color: #822;
+    border-color: #933;
+    color: #300;
+    font-weight: bold;
+}
+.clear-btn:hover {
+    background-color: #600;
+}
+.clear-btn:active {
+    background-color: #400;
 }
