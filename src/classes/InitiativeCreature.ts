@@ -23,6 +23,13 @@ export default class InitiativeCreature {
     public notes : string = "";
     public statBlockUrl : string = "";
 
+    constructor(creature : Object = {}) {
+        for(let key of Object.keys(creature)) {
+            // @ts-ignore
+            this[key] = creature[key];
+        }
+    }
+
     public async rollInitiative(physical : boolean = true) : Promise<string> {
         // We use deterministic dice rolling to guarantee a result even if interrupted
         let result = Math.floor(Math.random() * 20)+1;

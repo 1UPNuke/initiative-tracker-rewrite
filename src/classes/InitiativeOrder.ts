@@ -210,16 +210,10 @@ export default abstract class InitiativeOrder {
         console.log(`Stored version: '${oldStorageVersion}', Current version: '${this.storageVersion}'`);
         if (oldStorageVersion == null) return;
         if (oldStorageVersion !== this.storageVersion) return;
-        let creatures : InitiativeCreature[] = JSON.parse(localStorage.getItem("initiativeCreatures") ?? "[]", parser);
+        let creatures : Object[] = JSON.parse(localStorage.getItem("initiativeCreatures") ?? "[]", parser);
         console.log(creatures);
         for (let c of creatures) {
-            let creature : InitiativeCreature = new InitiativeCreature();
-
-            for(let key of Object.keys(c)) {
-                // @ts-ignore
-                creature[key] = c[key];
-            }
-
+            let creature : InitiativeCreature = new InitiativeCreature(c);
             this.addCreature(creature);
             console.log(creature.name);
         }
