@@ -2,9 +2,12 @@ import InitiativeOrder from "./classes/InitiativeOrder";
 import InitiativeTableHandler from "./classes/InitiativeTableHandler";
 import MonsterDropdown from "./classes/MonsterDropdown";
 import InitiativeCreature, { Attitude } from "./classes/InitiativeCreature";
+import DiceRoller from "./classes/DiceRoller";
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    DiceRoller.init();
+
     MonsterDropdown.fetchMonsters();
     InitiativeTableHandler.createTable();
 
@@ -32,6 +35,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
         InitiativeOrder.round = 0;
         let counter = document.querySelector(".initiative-round-counter");
         if(counter) counter.textContent = "Round: "+InitiativeOrder.round;
+    });
+
+
+    let DiceSimCheckbox : HTMLInputElement | null = document.querySelector("#dice-sim-checkbox");
+    DiceRoller.enabled = DiceSimCheckbox?.checked ?? true;
+    DiceSimCheckbox?.addEventListener("change", e=>{
+        DiceRoller.enabled = DiceSimCheckbox?.checked ?? true;
     });
 
     const addCreatureWithAttitude = (attitude : Attitude)=>{

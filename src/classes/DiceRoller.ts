@@ -4,6 +4,8 @@ export default abstract class DiceRoller {
     private static dicebox : any = null;
     private static diceClearTimeout : number = NaN;
 
+    public static enabled = true;
+
     public static async init() {
         DiceRoller.dicebox = new DiceBox("#dicebox", {
             sounds: true
@@ -16,6 +18,10 @@ export default abstract class DiceRoller {
         if(DiceRoller.dicebox === null) await DiceRoller.init();
         let boxElem = (document.querySelector("#dicebox") as HTMLElement);
         return new Promise<void>(async (resolve, reject) => {
+            if(!this.enabled) {
+                resolve();
+                return;
+            }
             window.setTimeout(resolve, 5000);
             boxElem.style.opacity = "1";
             await DiceRoller.dicebox.roll(dice);

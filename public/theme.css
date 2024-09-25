@@ -179,3 +179,20 @@ caption {
     padding: 0.5em;
     margin: 0.5em;
 }
+
+.dice-sim-checkbox-container {
+    position: fixed;
+    left: 1em;
+    bottom: 1em;
+    border-radius: 0.1em;
+    border:0.2em outset #321;
+    color: #A98;
+    background-color: #210;
+    font-weight: bold;
+    filter: drop-shadow(#000 0.2em 0.2em 0.3em);
+    transition: all 0.1s;
+    font-family: 'Roboto Slab', serif;
+    outline: none;
+    padding: 0.2em;
+    z-index: 1;
+}
