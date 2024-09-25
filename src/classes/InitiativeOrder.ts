@@ -121,6 +121,8 @@ export default abstract class InitiativeOrder {
     }
 
     public static clear() {
+        let shouldClear = confirm("Are you sure you want to clear the table?");
+        if (!shouldClear) return;
         InitiativeOrder.initiativeCreatures = [];
         InitiativeTableHandler.updateTable();
     }
