@@ -1,7 +1,7 @@
 import InitiativeCreature, { Attitude } from "./InitiativeCreature";
 import InitiativeOrder from "./InitiativeOrder";
 import MonsterDropdown from "./MonsterDropdown";
-import { evaluate as mathEval } from 'mathjs';
+import { evaluate as mathEval, floor as mathFloor } from 'mathjs';
 
 type InitiativeTableColumn = {
     header : string,
@@ -227,7 +227,7 @@ export default abstract class InitiativeTableHandler{
             let c = InitiativeOrder.getCreature(creature.id);
             if(!c) return;
             // Parse the new hitpoints with mathjs to allow for simple arithmetic on the HP
-            const new_hit_points : number = mathEval(e.target.textContent || "NaN");
+            const new_hit_points : number = mathFloor(mathEval(e.target.textContent || "NaN"));
 
             c.hit_points = new_hit_points;
             InitiativeOrder.updateCreatureNoRefresh(creature.id, c);
