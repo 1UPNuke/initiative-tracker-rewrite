@@ -1,9 +1,10 @@
-
 .btn {
     text-align: center;
     font-size: 200%;
     border-radius: 0.1em;
-    border:0.2em outset #321;
+    border: 0.2em solid #321;
+    border-bottom-color: #100800;
+    border-right-color: #100800;
     color: #A98;
     background-color: #210;
     font-weight: bold;
@@ -21,14 +22,11 @@
 }
 
 .btn:hover {
-    background-color: #100800;
+    filter: drop-shadow(#000 0.2em 0.2em 0.3em) brightness(0.75);
 }
 
 .btn:active {
-    border:0.2em outset #321;
-    color: #876;
-    filter: drop-shadow(#000 0 0 0);
-    background-color: #100800;
+    filter: drop-shadow(#000 0 0 0) brightness(0.5);
     transform: scale(0.9);
 }
 
@@ -43,46 +41,34 @@
 .plus-btn.friendly {
     background-color: #069;
     border-color: #07A;
+    border-bottom-color: #058;
+    border-right-color: #058;
     z-index: 3;
-}
-.plus-btn.friendly:hover {
-    background-color: #047;
-}
-.plus-btn.friendly:active {
-    background-color: #036;
 }
 
 .plus-btn.neutral {
     background-color: #666;
     border-color: #777;
-    z-index: 2;
-}
-.plus-btn.neutral:hover {
-    background-color: #444;
-    z-index: 2;
-}
-.plus-btn.neutral:active {
-    background-color: #333;
+    border-bottom-color: #555;
+    border-right-color: #555;
     z-index: 2;
 }
 
 .plus-btn.hostile {
     background-color: #822;
     border-color: #933;
+    border-bottom-color: #711;
+    border-right-color: #711;
     z-index: 1;
-}
-.plus-btn.hostile:hover {
-    background-color: #600;
-}
-.plus-btn.hostile:active {
-    background-color: #400;
 }
 
 
 .cell-btn {
     background-color: #555;
     position: relative;
-    border: 0.5em outset #666 !important;
+    border: 0.5em solid #666 !important;
+    border-bottom-color: #444 !important;
+    border-right-color: #444 !important;
     border-radius: 100%;
     width: 4em;
     height: 4em;
@@ -92,12 +78,19 @@
     margin: 1em;
     padding: 0;
 }
+
 .cell-btn:hover {
-    background-color: #444;
+    filter: brightness(0.75);
 }
+
 .cell-btn:active {
-    border: 0.5em inset #444 !important;
-    background-color: #222;
+    filter: brightness(0.5);
+}
+
+.cell-btn:active {
+    border: 0.5em solid #444 !important;
+    border-bottom-color: #666 !important;
+    border-right-color: #666 !important;
 }
 
 .cell-btn>img {
@@ -107,26 +100,28 @@
 
 .creature-delete-btn {
     background-color: #822;
-    border: 0.5em outset #A22 !important;
+    border: 0.5em solid #A22 !important;
+    border-bottom-color: #711 !important;
+    border-right-color: #711 !important;
 }
-.creature-delete-btn:hover {
-    background-color: #711;
-}
+
 .creature-delete-btn:active {
-    background-color: #600;
-    border: 0.5em inset #A22 !important;
+    border: 0.5em solid #711 !important;
+    border-bottom-color: #A22 !important;
+    border-right-color: #A22 !important;
 }
 
 .creature-clone-btn {
     background-color: #358;
-    border: 0.5em outset #46A !important;
+    border: 0.5em solid #46A !important;
+    border-bottom-color: #247 !important;
+    border-right-color: #247 !important;
 }
-.creature-clone-btn:hover {
-    background-color: #247;
-}
+
 .creature-clone-btn:active {
-    background-color: #135;
-    border: 0.5em inset #46A !important;
+    border: 0.5em solid #247 !important;
+    border-bottom-color: #358 !important;
+    border-right-color: #358 !important;
 }
 
 .reset-rounds-btn {
@@ -153,12 +148,8 @@
 .clear-btn {
     background-color: #822;
     border-color: #933;
+    border-bottom-color: #711;
+    border-right-color: #711;
     color: #300;
     font-weight: bold;
-}
-.clear-btn:hover {
-    background-color: #600;
-}
-.clear-btn:active {
-    background-color: #400;
 }
