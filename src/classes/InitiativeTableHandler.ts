@@ -133,7 +133,6 @@ export default abstract class InitiativeTableHandler{
 
         // Create an input for editing and append it to the cell
         let input = InitiativeTableHandler.createAndAppendInput(cell);
-        input.inputMode = "numeric";
         
         // Event listener to update initiative based on input value
         input.addEventListener("input", (e)=>{
@@ -221,7 +220,6 @@ export default abstract class InitiativeTableHandler{
 
         // Create an input for editing and append it to the cell
         let input = InitiativeTableHandler.createAndAppendInput(cell);
-        input.inputMode = "numeric";
         
         // Event listener to update HP based on input value
         input.addEventListener("input", (e)=>{
@@ -260,7 +258,6 @@ export default abstract class InitiativeTableHandler{
 
         // Create an input for editing and append it to the cell
         let input = InitiativeTableHandler.createAndAppendInput(cell);
-        input.inputMode = "numeric";
         
         // Event listener to update AC based on input value
         input.addEventListener("input", (e)=>{

@@ -23,6 +23,7 @@
 
 .hit-points-cell {
     width: 5%;
+    min-width: 6rem;
 }
 
 .armor-class-cell {
