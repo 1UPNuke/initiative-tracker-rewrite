@@ -23,7 +23,7 @@
 
 .hit-points-cell {
     width: 5%;
-    min-width: 6rem;
+    min-width: 12rem;
 }
 
 .armor-class-cell {
@@ -33,7 +33,6 @@
 
 .notes-cell {
     width: 14%;
-    text-wrap: wrap;
 }
 
 .damage-type-modifiers-cell {
@@ -49,6 +48,5 @@
 
 .manage-cell {
     width: 10%;
-    min-width: 12rem;
     padding: 0;
 }
