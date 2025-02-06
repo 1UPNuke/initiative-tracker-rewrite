@@ -55,4 +55,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     document.querySelector(".plus-btn.hostile")?.addEventListener("click", ()=>addCreatureWithAttitude(Attitude.Hostile));
 
     InitiativeTableHandler.updateTable();
+
+    document.documentElement.addEventListener("click", ()=>{
+        if(confirm("Would you like to enter full screen?")) document.documentElement.requestFullscreen();
+    }, {once:true});
 });

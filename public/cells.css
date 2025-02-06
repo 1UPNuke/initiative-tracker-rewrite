@@ -36,6 +36,7 @@
 .damage-type-modifiers-cell {
     padding: 0.5em;
     text-align: left;
+    min-width: 12em;
 }
 
 .damage-type-modifiers-head {
@@ -44,5 +45,6 @@
 
 .manage-cell {
     width: 10%;
+    min-width: 8em;
     padding: 0;
 }
