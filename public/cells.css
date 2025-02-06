@@ -40,6 +40,7 @@
     padding: 0;
     text-align: left;
     min-width: 22rem;
+    text-align: center;
 }
 
 .damage-type-modifiers-head {
