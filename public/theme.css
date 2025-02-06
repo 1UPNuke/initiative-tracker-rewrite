@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Almendra+SC&family=Roboto+Slab&display=swap');
 
 :root {
-    --table-border-width: 0.5em;
+    --table-border-width: 0.75rem;
     --table-border-light: #432;
     --table-border-dark: #321;
+    color-scheme: dark;
 }
 
 * {
@@ -29,21 +30,21 @@ body {
 }
 
 header {
-    height: 5em;
+    height: 5rem;
     background-color: #100;
     text-align: center;
     color: #DCB;
-    margin-bottom: 2em;
-    border-bottom: 1em ridge var(--table-border-light);
+    margin-bottom: 2rem;
+    border-bottom: 1rem ridge var(--table-border-light);
     font-family: 'Almendra SC', serif;
-    box-shadow: #000 0 1em 3em;
+    box-shadow: #000 0 1em 3rem;
 }
 
 header>h1::before, header>h1::after {
     content: url("./img/dragon.svg");
     display: inline-block;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1rem;
+    margin-right: 1rem;
     transform: scale(150%);
 }
 
@@ -54,9 +55,9 @@ header>h1::after {
 main {
     flex: auto;
     text-align: center;
-    padding: 3em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 table {
@@ -68,7 +69,7 @@ table {
     border-bottom-color: var(--table-border-dark);
     border-right-color: var(--table-border-dark);
     font-size: 150%;
-    box-shadow: #000 1em 1em 3em;
+    box-shadow: #000 1rem 1rem 3rem;
     font-family: 'Roboto Slab', serif;
 }
 
@@ -81,9 +82,9 @@ td, th {
     border: calc(var(--table-border-width) / 2) solid var(--table-border-dark);
     border-bottom-color: var(--table-border-light);
     border-right-color: var(--table-border-light);
-    padding: 1em;
+    padding: 1rem;
     box-sizing: border-box;
-    height: 4em;
+    height: 4rem;
     position: relative;
     background-color: #100;
 }
@@ -103,7 +104,7 @@ td>div.editable {
     box-sizing: border-box;
     text-align: center;
     min-width: 1ch;
-    min-height: 1em;
+    min-height: 1rem;
     font-family: serif;
     font-size: 90%;
     justify-content: center;
@@ -111,12 +112,12 @@ td>div.editable {
 }
 
 tr.attitude-friendly > td {
-    box-shadow: inset #08C 0 0 1em 0;
+    box-shadow: inset #08C 0 0 2rem 0;
     color: #0CE;
 }
 
 tr.attitude-hostile > td {
-    box-shadow: inset #C00 0 0 1em 0;
+    box-shadow: inset #C00 0 0 2rem 0;
     color: #E88;
 }
 
@@ -132,7 +133,9 @@ tr.attitude-hostile > td {
 }
 
 #input-container {
-    margin-top: 3em;
+    position: sticky;
+    bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .btns-space-between {
@@ -149,7 +152,7 @@ tr.attitude-hostile > td {
 
 .current-turn {
     transform: scaleX(1.03) scaleY(1.1);
-    box-shadow: #000 1em 1em 1em;
+    box-shadow: #000 2rem 2rem 2rem;
     position: relative;
     z-index: 10;
 }
@@ -163,9 +166,10 @@ caption {
 
 .monster-link {
     content: url("img/book-skull.svg");
-    width: 1.5em;
-    height: 1.5em;
-    margin: 1em;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
+    margin-right: 0;
     vertical-align: middle;
 }
 
@@ -175,22 +179,24 @@ caption {
 
 .initiative-round-counter {
     font-size: 200%;
-    filter: drop-shadow(#000 0.2em 0.2em 0.3em);
+    filter: drop-shadow(#000 0.4rem 0.4rem 0.6rem);
     display: inline;
 }
 
 .initiative-round-counter::before {
     content: "";
-    padding: 0.5em;
-    margin: 0.5em;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 .dice-sim-checkbox-container {
     position: fixed;
-    left: 1em;
-    bottom: 1em;
-    border-radius: 0.1em;
-    border:0.2em outset #321;
+    left: 1rem;
+    bottom: 1rem;
+    border-radius: 0.1rem;
+    border:0.2em solid #321;
+    border-bottom-color: #210;
+    border-right-color: #210;
     color: #A98;
     background-color: #210;
     font-weight: bold;
@@ -198,6 +204,6 @@ caption {
     transition: all 0.1s;
     font-family: 'Roboto Slab', serif;
     outline: none;
-    padding: 0.2em;
+    padding: 0.2rem;
     z-index: 1;
 }

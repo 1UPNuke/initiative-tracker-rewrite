@@ -1,28 +1,28 @@
 .btn {
     text-align: center;
     font-size: 200%;
-    border-radius: 0.1em;
-    border: 0.2em solid #321;
+    border-radius: 0.2rem;
+    border: 0.4rem solid #321;
     border-bottom-color: #100800;
     border-right-color: #100800;
     color: #A98;
     background-color: #210;
     font-weight: bold;
-    filter: drop-shadow(#000 0.2em 0.2em 0.3em);
+    filter: drop-shadow(#000 0.4rem 0.4rem 0.6rem);
     position: relative;
-    margin: 0.5em;
+    margin: 1rem;
     font-family: serif;
     transition: all 0.1s;
     cursor: pointer;
     font-family: 'Roboto Slab', serif;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 1rem;
+    padding-right: 1rem;
     outline: none;
-    height: 2em;
+    height: 4rem;
 }
 
 .btn:hover {
-    filter: drop-shadow(#000 0.2em 0.2em 0.3em) brightness(0.75);
+    filter: drop-shadow(#000 0.4rem 0.4rem 0.6rem) brightness(0.75);
 }
 
 .btn:active {
@@ -31,8 +31,8 @@
 }
 
 .plus-btn {
-    width: 2em;
-    height: 2em;
+    width: 4rem;
+    height: 4rem;
     border-radius: 100%;
     padding: 0;
     color: #AAA;
@@ -66,16 +66,16 @@
 .cell-btn {
     background-color: #555;
     position: relative;
-    border: 0.5em solid #666 !important;
+    border: 0.5rem solid #666 !important;
     border-bottom-color: #444 !important;
     border-right-color: #444 !important;
     border-radius: 100%;
-    width: 4em;
-    height: 4em;
+    width: 4rem;
+    height: 4rem;
     padding: 0;
     box-shadow: none !important;
     cursor: pointer;
-    margin: 1em;
+    margin: 1rem;
     padding: 0;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .cell-btn:active {
-    border: 0.5em solid #444 !important;
+    border: 0.5rem solid #444 !important;
     border-bottom-color: #666 !important;
     border-right-color: #666 !important;
 }
@@ -100,26 +100,28 @@
 
 .creature-delete-btn {
     background-color: #822;
-    border: 0.5em solid #A22 !important;
+    border: 0.5rem solid #A22 !important;
     border-bottom-color: #711 !important;
     border-right-color: #711 !important;
+    margin-left: 0.5rem;
 }
 
 .creature-delete-btn:active {
-    border: 0.5em solid #711 !important;
+    border: 0.5rem solid #711 !important;
     border-bottom-color: #A22 !important;
     border-right-color: #A22 !important;
 }
 
 .creature-clone-btn {
     background-color: #358;
-    border: 0.5em solid #46A !important;
+    border: 0.5rem solid #46A !important;
     border-bottom-color: #247 !important;
     border-right-color: #247 !important;
+    margin-right: 0.5rem;
 }
 
 .creature-clone-btn:active {
-    border: 0.5em solid #247 !important;
+    border: 0.5rem solid #247 !important;
     border-bottom-color: #358 !important;
     border-right-color: #358 !important;
 }
@@ -131,11 +133,11 @@
     background-color: transparent;
     border: none;
     position: relative;
-    margin: 0.5em;
+    margin: 1rem;
     cursor: pointer;
     background-image: url("img/arrow-rotate-left.svg");
-    width: 1em;
-    height: 1em;
+    width: 2rem;
+    height: 2rem;
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
@@ -152,4 +154,16 @@
     border-right-color: #711;
     color: #300;
     font-weight: bold;
+}
+
+.fullscreen-btn {
+    position: fixed;
+    margin: 0;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 99;
+}
+
+.fullscreen-btn::after {
+    content: url("img/fullscreen.svg");
 }

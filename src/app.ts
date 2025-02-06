@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     InitiativeTableHandler.updateTable();
 
-    document.documentElement.addEventListener("click", ()=>{
-        if(confirm("Would you like to enter full screen?")) document.documentElement.requestFullscreen();
-    }, {once:true});
+    document.querySelector(".fullscreen-btn")?.addEventListener("click", ()=>{
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+    });
 });

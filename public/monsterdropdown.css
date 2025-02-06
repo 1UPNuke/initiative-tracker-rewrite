@@ -13,8 +13,8 @@
     max-height: 50vh;
     user-select: none;
     cursor: pointer;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     z-index: 999;
     scrollbar-width: 1rem;
     scrollbar-color: #654 #210;
@@ -23,7 +23,7 @@
 #monster-dropdown>li {
     width: 100%;
     color: #A98;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     border-bottom: 2px dotted #876;
 }
 
