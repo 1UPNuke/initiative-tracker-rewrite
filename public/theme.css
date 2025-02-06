@@ -55,7 +55,7 @@ header>h1::after {
 main {
     flex: auto;
     text-align: center;
-    padding: 3rem;
+    padding: 2vw;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -112,12 +112,12 @@ td>div.editable {
 }
 
 tr.attitude-friendly > td {
-    box-shadow: inset #08C 0 0 2rem 0;
+    box-shadow: inset #08C 0 0 1.5rem 0;
     color: #0CE;
 }
 
 tr.attitude-hostile > td {
-    box-shadow: inset #C00 0 0 2rem 0;
+    box-shadow: inset #C00 0 0 1.5rem 0;
     color: #E88;
 }
 
